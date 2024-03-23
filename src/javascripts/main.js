@@ -19,7 +19,7 @@ function displayMovie(movie){
     featured_movie.innerHTML = `
     <div class="card">
             <div class="card-header">${movie.title}</div>
-            <img src="${movie.poster}" class="card-img-top" alt="">
+            <img src="${movie.poster}" class="card-img-top" alt="${movie.title}">
             <div class="card-body">
               <h5 class="card-title"><small>${movie.year}, ${movie.genre}</small></h5>
               <p class="card-text">${movie.plot}</p>
@@ -35,10 +35,10 @@ function displayMovie(movie){
     `
 }
 
-function searchMovie(event){
+function searchMovies(event){
     event.preventDefault()
 
-    let input = document.querySelector('[type="search"').value || ""
+    let input = document.querySelector('[type="search"]').value || ""
     let count = 0
     for(let m of movies){
         if(m.title.toUpperCase().indexOf(input.toUpperCase()) == -1){
